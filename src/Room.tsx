@@ -167,8 +167,10 @@ function Room(inProps: RoomProps) {
         }}
         stream={stream}
         muted={true}
-        controls={<><AudioEnableButton size={controlsSize} />
-            <VideoEnableButton size={controlsSize} /></>}
+        controls={<>
+            {!stream.isScreensharing() && <AudioEnableButton size={controlsSize} />}
+            {stream.hasVideo() && !stream.isScreensharing() && <VideoEnableButton size={controlsSize} />}
+        </>}
         onClick={() => setSelectedStream((current) => current === stream ? undefined : stream)}>
         {stream.hasVideo() ? <Video
             sx={video_sizing}
