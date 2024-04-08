@@ -6,14 +6,15 @@ import Button from "@mui/material/Button";
 import Icon from "@mui/material/Icon";
 import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
 
 import { CreateStreamOptions, MediaDevice, MediaDeviceList, Stream } from '@apirtc/apirtc';
 import {
     Audio,
+    AudioEnableButton,
     MediaDeviceSelect,
     Stream as StreamComponent,
-    Video
+    Video,
+    VideoEnableButton
 } from '@apirtc/mui-react-lib';
 
 import { useThemeProps } from "@mui/material/styles";
@@ -124,7 +125,11 @@ const Settings: React.FC<SettingsProps> = (inProps: SettingsProps) => {
                                 }),
                             }}
                             stream={localStream}
-                            muted={true}>
+                            muted={true}
+                            controls={<>
+                                {localStream.hasAudio() && <AudioEnableButton />}
+                                {localStream.hasVideo() && <VideoEnableButton />}
+                            </>}>
                             {localStream.hasVideo() ? (
                                 <Video
                                     style={{
