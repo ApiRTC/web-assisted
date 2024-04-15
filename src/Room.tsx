@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
+import { isMobile } from 'react-device-detect';
+
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { Theme, useThemeProps } from "@mui/material/styles";
@@ -93,7 +95,7 @@ function Room(inProps: RoomProps) {
             return
         }
 
-        if (facingMode === 'environment') {
+        if (isMobile && (facingMode === 'environment')) {
             if (globalThis.logLevel.isDebugEnabled) {
                 console.debug(`${COMPONENT_NAME}|useEffect setSelectedStream localStream`, localStream)
             }

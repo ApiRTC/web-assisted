@@ -194,7 +194,7 @@ function App(inProps: AppProps) {
 		invitationData.streams.find((obj) => { return (obj.type === 'user-media') }) : undefined,
 		[invitationData]);
 
-	const displayMediaStreamRequest = useMemo(() => invitationData ?
+	const displayMediaStreamRequest = useMemo(() => !isMobile && invitationData ?
 		invitationData.streams.find((obj) => { return (obj.type === 'display-media') }) : undefined,
 		[invitationData]);
 
