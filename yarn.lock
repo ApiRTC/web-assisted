@@ -15,20 +15,20 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@apirtc/apirtc@^5.0.19":
-  version "5.0.19"
-  resolved "https://registry.yarnpkg.com/@apirtc/apirtc/-/apirtc-5.0.19.tgz#17699b926a4545975254335bffd2acee4922ad6d"
-  integrity sha512-eLTbVSEVk2LO5f369xNFcZYhKWxhCkQM1rUZ5r8qozGavB0pP+oVFui2malzH3REmKGrvotOs1JnwSo3Y3iqiA==
+"@apirtc/apirtc@^5.0.20":
+  version "5.0.20"
+  resolved "https://registry.yarnpkg.com/@apirtc/apirtc/-/apirtc-5.0.20.tgz#aad047436119a54b566d4f39bc653615d941c94b"
+  integrity sha512-PqxpJTlyyameSKXjPCQCal7RNny29+WQd7LOIdmEyH6POr5X8Hec41L+womPth3beksUQZGp5wops4H1ej+5/g==
 
-"@apirtc/mui-react-lib@^1.0.13":
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/@apirtc/mui-react-lib/-/mui-react-lib-1.0.13.tgz#5704e4c5478b5e914aa1f3706f4e997e26493c06"
-  integrity sha512-487vb3TVHj3lUNHv7NaqF7ZQu7tD/etGRe5Vy3uAbHuMvlra24uxbFd58KoZPTFQjPhxaGSMfrNzhGQPjyBZag==
+"@apirtc/mui-react-lib@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@apirtc/mui-react-lib/-/mui-react-lib-1.0.14.tgz#64ebd78d50dddcb5bc483def774d02c926a7174e"
+  integrity sha512-hdkXN/ldgRH92h01IMN7Jv2OCtEwzzZ2EvWDKFwzZUuJwXfojjJUGziD80H2RYchMziQTBuT7JMxx83jXW+Zuw==
 
-"@apirtc/react-lib@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@apirtc/react-lib/-/react-lib-1.1.4.tgz#5fac38eb48c079008475713df653a7364c70e124"
-  integrity sha512-RQRGBUpdPwZrocefQeZxPVA7pNeZq0rMJfR7ZNnN+zULRUS4ROIRidSkop/FJ5btuFZ7cSpWg8fH10ic22eoBg==
+"@apirtc/react-lib@^1.1.8":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@apirtc/react-lib/-/react-lib-1.1.8.tgz#75be29f98097093cc4b63cd71cfa4e3bfa2c7f14"
+  integrity sha512-eHhs6HEF78b1e/HvqRWrss+FdC7mP397v1Xi7HRGU20bWhqWpLW/SN+aHxKN57T601swBt4lk18zgUnlldFxmQ==
 
 "@apirtc/shared-types@file:./shared-types":
   version "0.1.0"
