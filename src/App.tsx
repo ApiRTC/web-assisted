@@ -506,6 +506,9 @@ function App(inProps: AppProps) {
 						console.error(`${COMPONENT_NAME}|fetch error`, content.fileShared.link, error)
 					});
 				} else if (isInstanceOfHangup(content)) {
+					if (globalThis.logLevel.isDebugEnabled) {
+						console.debug(`${COMPONENT_NAME}|received Hangup, leaving conversation`, content)
+					}
 					conversation.leave().then()
 						.catch((error) => {
 							if (globalThis.logLevel.isWarnEnabled) {
