@@ -129,7 +129,7 @@ function App(inProps: AppProps) {
 	}, [logRocketAppID])
 
 	const invitationServiceUrl = useMemo(() => {
-		return searchParams.get(RequestParameters.invitationServiceUrl) ?? 'https://is.dev.apizee.com/invitations';
+		return searchParams.get(RequestParameters.invitationServiceUrl) ?? 'https://is.apizee.com/invitations';
 	}, [searchParams]);
 
 	const [invitationData, setInvitationData] = useState<InvitationData | undefined>(undefined);
