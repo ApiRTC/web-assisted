@@ -1,7 +1,7 @@
 {
 	"name": "web-guest",
-	"version": "1.0.0",
-	"homepage": "https://apirtc.github.io/web-guest",
+	"version": "0.1.0",
+	"homepage": "https://apirtc.github.io/0.1/web-guest",
 	"private": true,
 	"dependencies": {
 		"@apirtc/apirtc": "^5.0.20",
