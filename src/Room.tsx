@@ -170,7 +170,7 @@ function Room(inProps: RoomProps) {
         stream={stream}
         muted={true}
         controls={<>
-            {!stream.isScreensharing() && <AudioEnableButton size={controlsSize} />}
+            {stream.hasAudio() && !stream.isScreensharing() && <AudioEnableButton size={controlsSize} />}
             {stream.hasVideo() && !stream.isScreensharing() && <VideoEnableButton size={controlsSize} />}
         </>}
         onClick={() => setSelectedStream((current) => current === stream ? undefined : stream)}>
@@ -209,6 +209,7 @@ function Room(inProps: RoomProps) {
                 subscribedStreams.map((stream: Stream, index: number) => _subscribedStream(stream, index, subscribedStreams.length > 1 && isSmallScreen ? 'medium' : 'large'))}
         </ApiRtcGrid>
         <Stack direction='row'
+            alignItems="flex-end"
             sx={{
                 position: 'absolute',
                 bottom: 4,
