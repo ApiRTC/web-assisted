@@ -33,6 +33,13 @@ function getLangFiles() {
 // To update <html lang='en'> attribute with correct language
 document.documentElement.setAttribute('lang', navigator.language.slice(0, 2));
 
+export const setFavIcon = (url: string) => {
+	const linkElement = document.querySelector("link[rel='icon']");
+	if (linkElement) {
+		(linkElement as any).href = url;
+	}
+}
+
 declare module '@mui/material/styles' {
 	interface Palette {
 		neutral: Palette['primary'];

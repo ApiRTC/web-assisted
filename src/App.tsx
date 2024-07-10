@@ -36,9 +36,10 @@ import Room from './Room';
 
 //import Keycloak from 'keycloak-js';
 import './App.css';
-import logo from './assets/apizee.svg';
+import APZ_LOGO from './assets/apizee.svg';
 import { loginKeyCloakJS } from './auth/keycloak';
 import { LogLevelText, setLogLevel } from './logLevel';
+import { setFavIcon } from '.';
 
 
 type TakeSnapshot = { takeSnapshot: Object };
@@ -205,6 +206,12 @@ function App(inProps: AppProps) {
 				{ interval: invitationData.callStatsMonitoringInterval })
 		}
 	}, [session, invitationData])
+
+	useEffect(() => {
+		if (invitationData && invitationData.logo) {
+			setFavIcon(invitationData.logo.url)
+		}
+	}, [invitationData])
 
 	// set facingMode according to invitation
 	useEffect(() => {
@@ -595,7 +602,7 @@ function App(inProps: AppProps) {
 
 	return <>
 		{!session && !invitationError && <Box display="flex" alignItems="center" justifyContent="center" sx={{ mt: 5 }}>
-			<img height="320px" width="320px" src={logo} alt="logo" />
+			<img height="320px" width="320px" src={invitationData?.logo?.url || APZ_LOGO} alt={invitationData?.logo?.alt || 'Apizee'} />
 		</Box>}
 
 		{invitationError && <ErrorPage errorType={invitationErrorStatus}></ErrorPage>}
@@ -609,7 +616,7 @@ function App(inProps: AppProps) {
 					<CardContent>
 						<TextStepper
 							activeStep={activeStep}
-							header={<img src={logo} alt="Apizee Logo" height={24} />}>
+							header={<img src={invitationData?.logo?.url || APZ_LOGO} alt={invitationData?.logo?.alt || 'Apizee'} height={24} />}>
 							<Step key="legal">
 								<OptInList
 									optIns={optIns}
