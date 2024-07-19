@@ -4,8 +4,8 @@
 	"homepage": "https://apirtc.github.io/web-guest",
 	"private": true,
 	"dependencies": {
-		"@apirtc/apirtc": "^5.0.20",
-		"@apirtc/mui-react-lib": "^1.0.15",
+		"@apirtc/apirtc": "^5.0.21",
+		"@apirtc/mui-react-lib": "1.1.0",
 		"@apirtc/react-lib": "^1.1.8",
 		"@emotion/react": "^11.10.8",
 		"@emotion/styled": "^11.10.8",
