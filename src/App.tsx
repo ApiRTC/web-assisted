@@ -41,12 +41,11 @@ import { loginKeyCloakJS } from './auth/keycloak';
 import { LogLevelText, setLogLevel } from './logLevel';
 import { setFavIcon } from '.';
 
-
-type TakeSnapshot = { takeSnapshot: Object };
-function isInstanceOfTakeSnapshot(object: any): object is TakeSnapshot {
-	if (typeof object !== 'object') return false;
-	return 'takeSnapshot' in object;
-}
+// type TakeSnapshot = { takeSnapshot: Object };
+// function isInstanceOfTakeSnapshot(object: any): object is TakeSnapshot {
+// 	if (typeof object !== 'object') return false;
+// 	return 'takeSnapshot' in object;
+// }
 
 //type FACING_MODES = 'user' | 'environment';
 type SwitchFacingMode = { switchFacingMode: boolean };
@@ -448,31 +447,32 @@ function App(inProps: AppProps) {
 				if (globalThis.logLevel.isDebugEnabled) {
 					console.debug(`${COMPONENT_NAME}|onContactData`, contactDataInfo)
 				}
-				const sender: Contact = contactDataInfo.sender;
+				// const sender: Contact = contactDataInfo.sender;
 				const content: Object = contactDataInfo.content;
-				if (isInstanceOfTakeSnapshot(content)) {
-					localStream.takeSnapshot(content.takeSnapshot)
-						.then((snapshot: any) => {
-							if (globalThis.logLevel.isDebugEnabled) {
-								console.debug(`${COMPONENT_NAME}|takeSnapshot of`, localStream, snapshot)
-							}
-							const fileTransferInvitation = sender.sendFile(
-								{
-									name: `snapshot_${new Date().toISOString()}.png`,
-									type: 'image/png',
-								}, snapshot
-							);
-							fileTransferInvitation.on('statusChange', (statusChangeInfo: any) => {
-								if (globalThis.logLevel.isDebugEnabled) {
-									console.debug(`${COMPONENT_NAME}|statusChange`, statusChangeInfo)
-								}
-							});
-						}).catch((error: any) => {
-							if (globalThis.logLevel.isWarnEnabled) {
-								console.warn(`${COMPONENT_NAME}|takeSnapshot error`, error)
-							}
-						});
-				} else if (isInstanceOfSwitchFacingMode(content)) {
+				// if (isInstanceOfTakeSnapshot(content)) {
+				// 	localStream.takeSnapshot(content.takeSnapshot)
+				// 		.then((snapshot: any) => {
+				// 			if (globalThis.logLevel.isDebugEnabled) {
+				// 				console.debug(`${COMPONENT_NAME}|takeSnapshot of`, localStream, snapshot)
+				// 			}
+				// 			const fileTransferInvitation = sender.sendFile(
+				// 				{
+				// 					name: `snapshot_${new Date().toISOString()}.png`,
+				// 					type: 'image/png',
+				// 				}, snapshot
+				// 			);
+				// 			fileTransferInvitation.on('statusChange', (statusChangeInfo: any) => {
+				// 				if (globalThis.logLevel.isDebugEnabled) {
+				// 					console.debug(`${COMPONENT_NAME}|statusChange`, statusChangeInfo)
+				// 				}
+				// 			});
+				// 		}).catch((error: any) => {
+				// 			if (globalThis.logLevel.isWarnEnabled) {
+				// 				console.warn(`${COMPONENT_NAME}|takeSnapshot error`, error)
+				// 			}
+				// 		});
+				// } else 
+				if (isInstanceOfSwitchFacingMode(content)) {
 					if (globalThis.logLevel.isDebugEnabled) {
 						console.debug(`${COMPONENT_NAME}|SwitchFacingMode`)
 					}
